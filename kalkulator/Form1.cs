@@ -16,8 +16,9 @@ namespace WindowsFormsApplication1
         public int r = 20;
         Color c = Color.Green;
         Point location = new Point(); 
-        Class1 figure = new Class1();
+        Figure figure = new Figure();
         List<Point> wwwpointwww = new List<Point>();
+        
         public Form1()
         {
             InitializeComponent();
@@ -68,7 +69,7 @@ namespace WindowsFormsApplication1
                 }
 
                 checkLine();
-                figure = new Class1();
+                figure = new Figure();
                 pictureBox1.Invalidate();
             }
         }
