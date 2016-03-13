@@ -15,14 +15,17 @@ namespace WindowsFormsApplication1
         int[,] tetr = new int[18,24];
         public int r = 20;
         Color c = Color.Green;
-        Point location = new Point(); 
-        Figure figure = new Figure();
+        Point location = new Point();
+        Figure figure;
+       // bykvaT bykvaT = new bykvaT();
+  
         List<Point> wwwpointwww = new List<Point>();
         
         public Form1()
         {
             InitializeComponent();
         }
+
             //public Figure(Color clr) 
             //    { 
             //        this.clr = clr; 
@@ -69,7 +72,8 @@ namespace WindowsFormsApplication1
                 }
 
                 checkLine();
-                figure = new Figure();
+                //figure = new Sqare();
+                Shape_Generate();
                 pictureBox1.Invalidate();
             }
         }
@@ -251,6 +255,32 @@ namespace WindowsFormsApplication1
             
 
 
+        }
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+
+            Shape_Generate();
+
+        }
+
+        private void Shape_Generate()
+        {
+            Random r = new Random();
+            switch (r.Next(0, 3))
+            {
+                case 0:
+                    figure = new Sqare();
+                    break;
+                case 1:
+                    figure = new bykvaT();
+                    break;
+                case 2:
+                    figure = new Lineyka();
+                    break;
+            }
         }
         
     }

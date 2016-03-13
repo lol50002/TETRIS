@@ -31,20 +31,17 @@ namespace WindowsFormsApplication1
             }
         }
 
-        public Point SLT
+        public virtual Point SLT
         {
             get
             {
-                //foreach (Point np in result)
-                //{
 
-                //}
                 Point result = new Point(location.X, location.Y + r);
                 return result;
             }
         }
 
-        public List<Point> FillPoints { get; }
+        public abstract List<Point> FillPoints { get; }
         //Конструкторы
         
         
