@@ -39,7 +39,7 @@ namespace WindowsFormsApplication1
 
         public bool canmove()
         {
-            bool can = figure.SLT.Y + figure.r < pictureBox1.Height;
+            bool can = figure.buttompoint.Y + figure.r < pictureBox1.Height;
             foreach (Point point in wwwpointwww)
             {
                 foreach (Point point1 in figure.FillPoints)
@@ -68,7 +68,8 @@ namespace WindowsFormsApplication1
                 foreach (Point p in figure.FillPoints)
                 {
                    wwwpointwww.Add(p);
-                   tetr[p.X /r, p.Y / r] = 1;
+                   
+                    tetr[p.X /r, p.Y / r] = 1;
                 }
 
                 checkLine();
@@ -176,6 +177,34 @@ namespace WindowsFormsApplication1
             }
         }
 
+        public bool canrotate()
+        {
+            figure.rotate();
+            foreach (Point point1 in figure.FillPoints)
+            {
+                if(point1.X>=0 && point1.Y<pictureBox1.Height && point1.X<pictureBox1.Width)
+                {
+                    foreach (Point point in wwwpointwww)
+                    {
+
+                        if (point.Equals(new Point(point1.X, point1.Y)))
+                        {
+                            figure.unrotate();
+                            return false;
+                        }
+                    }
+                }
+                else
+                {
+                    figure.unrotate();
+                    return false;
+                }
+            }
+            figure.unrotate();
+            return true;
+            
+        }
+
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -197,6 +226,10 @@ namespace WindowsFormsApplication1
                     {
                         canFall();
                     }
+                    break;
+                case Keys.Space:
+                    if(canrotate())
+                        figure.rotate();
                     break;
             }
             pictureBox1.Invalidate();
@@ -269,7 +302,7 @@ namespace WindowsFormsApplication1
         private void Shape_Generate()
         {
             Random r = new Random();
-            switch (r.Next(0, 3))
+            switch (r.Next(0, 4))
             {
                 case 0:
                     figure = new Sqare();
@@ -279,6 +312,9 @@ namespace WindowsFormsApplication1
                     break;
                 case 2:
                     figure = new Lineyka();
+                    break;
+                case 3:
+                    figure = new perevernytayL();
                     break;
             }
         }

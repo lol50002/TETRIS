@@ -13,6 +13,7 @@ namespace WindowsFormsApplication1
         {
             get
             {
+
                 List<Point> result = new List<Point>();
                 result.Add(location);
                 result.Add(new Point(location.X, location.Y + r));

@@ -35,16 +35,42 @@ namespace WindowsFormsApplication1
         {
             get
             {
+                Point res = location;
+                foreach (Point p in FillPoints)
+                {
+                    if (res.X > p.X)
+                    {
+                        res = p;
+                    }
+                }
+                return res;
+            }
+        }
+        public Point buttompoint
+        {
+            
+            get
+            {
+                Point point1= new Point();
+                point1= location;
 
-                Point result = new Point(location.X, location.Y + r);
-                return result;
+                foreach (Point pointt in FillPoints)
+                {
+                    if (point1.Y < pointt.Y)
+                        point1 = pointt;
+
+                }
+                return (point1);
             }
         }
 
+        
+        
+
         public abstract List<Point> FillPoints { get; }
         //Конструкторы
-        
-        
+
+        public int state {get; set; }
         
         
         //Методы
@@ -66,7 +92,15 @@ namespace WindowsFormsApplication1
             location = new Point(location.X,location.Y + r);
         }
 
-        
-       
+
+        public virtual void rotate()
+        {
+
+        }
+
+
+        public virtual void unrotate()
+        {
+        }
     }
 }
