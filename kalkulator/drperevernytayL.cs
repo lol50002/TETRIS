@@ -17,30 +17,39 @@ namespace WindowsFormsApplication1
                 switch (state)
                 {
                     case 0:
-
-
-                        result.Add(location);
-                        result.Add(new Point(location.X + r, location.Y - r * 2));
-                        result.Add(new Point(location.X, location.Y - r));
-                        result.Add(new Point(location.X, location.Y - 2 * r));
+                        {
+                            result.Add(location);
+                            result.Add(new Point(location.X + r, location.Y));
+                            result.Add(new Point(location.X+r, location.Y + r));
+                            result.Add(new Point(location.X+r, location.Y + 2 * r));
+                        }
                         break;
+
                     case 1:
-                        result.Add(location);
-                        result.Add(new Point(location.X + r, location.Y));
-                        result.Add(new Point(location.X + 2 * r, location.Y));
-                        result.Add(new Point(location.X + r * 2, location.Y + r));
+                        {
+                            result.Add(location);
+                            result.Add(new Point(location.X + r, location.Y - r));
+                            result.Add(new Point(location.X - r, location.Y));
+                            result.Add(new Point(location.X + r, location.Y));
+                        }
                         break;
+
                     case 2:
-                        result.Add(location);
-                        result.Add(new Point(location.X - r, location.Y));
-                        result.Add(new Point(location.X, location.Y - r));
-                        result.Add(new Point(location.X, location.Y - r * 2));
+                        {
+                            result.Add(location);
+                            result.Add(new Point(location.X + r, location.Y));
+                            result.Add(new Point(location.X, location.Y - r));
+                            result.Add(new Point(location.X, location.Y - 2 * r));
+                        }
                         break;
+
                     case 3:
-                        result.Add(location);
-                        result.Add(new Point(location.X, location.Y - r));
-                        result.Add(new Point(location.X + r, location.Y));
-                        result.Add(new Point(location.X + r * 2, location.Y));
+                        {
+                            result.Add(location);
+                            result.Add(new Point(location.X - r, location.Y + r));
+                            result.Add(new Point(location.X + r, location.Y));
+                            result.Add(new Point(location.X - r, location.Y));
+                        }
                         break;
 
                 }
@@ -54,17 +63,13 @@ namespace WindowsFormsApplication1
 
         }
 
-
-
-        public override Point SLT
+        public override void unrotate()
         {
-            get
-            {
-
-                Point result = new Point(location.X, location.Y);
-                return result;
-            }
+            state = (state - 1);
+            if (state == -1)
+                state = 3;
         }
+
 
 
 

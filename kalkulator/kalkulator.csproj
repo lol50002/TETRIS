@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="bykvaT.cs" />
+    <Compile Include="molniyperever.cs" />
+    <Compile Include="molniy.cs" />
     <Compile Include="drperevernytayL.cs" />
     <Compile Include="perevernytayL.cs" />
     <Compile Include="Lineyka.cs" />

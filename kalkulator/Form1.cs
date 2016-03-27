@@ -302,7 +302,7 @@ namespace WindowsFormsApplication1
         private void Shape_Generate()
         {
             Random r = new Random();
-            switch (r.Next(0, 4))
+            switch (r.Next(0, 6))
             {
                 case 0:
                     figure = new Sqare();
@@ -315,6 +315,15 @@ namespace WindowsFormsApplication1
                     break;
                 case 3:
                     figure = new perevernytayL();
+                    break;
+                case 4:
+                    figure = new drperevernytayL();
+                    break;
+                case 5:
+                    figure = new molniy();
+                    break;
+                case 6:
+                    figure = new molniyperever();
                     break;
             }
         }

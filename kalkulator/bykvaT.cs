@@ -55,15 +55,14 @@ namespace WindowsFormsApplication1
 
         }
 
-        public override Point SLT
+        public override void unrotate()
         {
-            get
-            {
-
-                Point result = new Point(location.X, location.Y);
-                return result;
-            }
+            state = (state - 1);
+            if (state == -1)
+                state = 3;
         }
+
+
 
     }
 

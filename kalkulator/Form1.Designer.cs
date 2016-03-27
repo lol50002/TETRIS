@@ -44,7 +44,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(121, 498);
+            this.button1.Location = new System.Drawing.Point(106, 498);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 23);
             this.button1.TabIndex = 0;
@@ -54,7 +54,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(360, 480);
             this.pictureBox1.TabIndex = 1;
@@ -74,7 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 540);
+            this.ClientSize = new System.Drawing.Size(535, 560);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
